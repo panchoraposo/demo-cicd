@@ -1,0 +1,2 @@
+# En PROD queremos alta disponibilidad
+replicaCount: 3

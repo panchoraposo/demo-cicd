@@ -1,0 +1,18 @@
+{{- if .Values.route.enabled -}}
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: {{ .Release.Name }}-pacman
+  labels:
+    app: pacman
+spec:
+  to:
+    kind: Service
+    name: {{ .Release.Name }}-pacman
+    weight: 100
+  port:
+    targetPort: http
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+{{- end -}}

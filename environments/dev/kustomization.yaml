@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+helmCharts:
+- name: pacman
+  includeCRDs: false
+  releaseName: pacman-dev
+  version: 0.1.0
+  repo: ../../../charts/pacman
+  valuesFile: values-dev.yaml
+
+commonLabels:
+  environment: development
