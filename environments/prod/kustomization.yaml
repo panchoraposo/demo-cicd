@@ -9,5 +9,6 @@ helmCharts:
   repo: ../../../charts/pacman
   valuesFile: values-prod.yaml
 
-commonLabels:
-  environment: production
+labels:
+  - pairs:
+      environment: development
